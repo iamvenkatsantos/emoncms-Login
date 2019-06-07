@@ -6,27 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
-    TextView tv;
+public class signup extends AppCompatActivity {
+    TextView tVsignIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View decorView = getWindow().getDecorView();
-// Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-
-        setContentView(R.layout.activity_main2);
-        tv=(TextView)findViewById(R.id.textView6);
-        tv.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.signup);
+        tVsignIn=findViewById(R.id.tVSignIn);
+        tVsignIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent in=new Intent(MainActivity2.this,MainActivity.class);
-                startActivity(in);
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),login.class);
+                startActivity(i);
                 finish();
 
             }
         });
     }
-
 }
